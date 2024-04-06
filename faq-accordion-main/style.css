@@ -60,6 +60,10 @@ body {
     align-items: center;
 }
 
+.qanda .question:hover {
+    color: hsl(292, 16%, 49%);
+}
+
 .qanda .answer {
     display: none;
 }
