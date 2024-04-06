@@ -1,0 +1,73 @@
+@font-face {
+    font-family: opensans;
+    src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: hsl(275, 100%, 97%);
+    position: relative;
+}
+
+.bckg {
+    height: 40%;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    z-index: -1;
+}
+
+.card {
+    height: max-content;
+    width: 40%;
+    border-radius: 10px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    background-color: white;
+}
+
+.maincon {
+    padding: 15px;
+    font-family: opensans;
+}
+
+.maincon .title {
+    height: max-content;
+    font-size: 3em;
+    font-weight: 700;
+    color: hsl(292, 42%, 14%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.qanda {
+    border-bottom: 1px solid hsl(275, 100%, 97%);
+}    
+
+.qanda .question {
+    padding: 15px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    color: hsl(292, 42%, 14%);
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qanda .answer {
+    display: none;
+}
+
+.qanda.active .answer {
+    display: block;
+    color: grey;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
