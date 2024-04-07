@@ -43,7 +43,7 @@ const calculate = () => {
     const diff = local_mili-entered_mili;
     const act_days_tot = diff / 86400000;
     const act_years = act_days_tot / 365.25;
-    const rem_months = (act_years - parseInt(act_years)) * 12;
+    const rem_months = (act_years - parseInt(act_years)) * 12 + 1;
     const rem_days = (rem_months - parseInt(rem_months)) * 30.5 - 1;
 
     change (parseInt(rem_days).toString(),
