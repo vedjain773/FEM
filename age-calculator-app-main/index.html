@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+  <div class="mainbox">
+    <div class="maincon">
+      <div class="purp-circle" onclick="main()">
+        <img src="assets/images/icon-arrow.svg" alt="arrow-icon">
+      </div>
+
+      <sec class="inputs">
+        <div class="inp-grp">
+          <label for="day">DAY</label>
+          <input type="text" name="day" placeholder="DD" id="day">
+          <p id="id-day"> </p>
+        </div>
+        
+        <div class="inp-grp">
+          <label for="month">MONTH</label>
+          <input type="text" name="month" placeholder="MM" id="month">
+          <p id="id-month"> </p>
+        </div> 
+
+        <div class="inp-grp">
+          <label for="year">YEAR</label>
+          <input type="text" name="year" placeholder="YYYY" id="year">
+          <p id="id-year"> </p>
+        </div>  
+      </sec>
+      <div class="calc">
+        <div class="t-years"><p><aside id="o_years">--</aside>years</p></div>
+        <div class="t-months"><p><aside id="o_months">--</aside>months</p></div>
+        <div class="t-years"><p><aside id="o_days">--</aside>days</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ved jain</a>.
+  </div>
+</body>
+</html>
