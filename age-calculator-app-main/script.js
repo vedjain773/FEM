@@ -67,7 +67,7 @@ const main = () => {
                 paras[i].parentElement.classList.add("invalid");
             }
         }
-    } else if (years > date.getFullYear()) {
+    } else if (date.getTime() - new Date(years, months, days) < 0) {
         p_years.textContent = "Must be in the past";
         p_years.parentElement.classList.add("invalid");
         arrow.classList.add("invalid");
