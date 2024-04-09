@@ -9,6 +9,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    font-family: poppins-reg;
+    border: 1px solid var(--purple);
+    padding: 5px;
 }
 
 .attribution a {
@@ -51,8 +54,9 @@ body {
     height: max-content;
     width: 40%;
     position: absolute;
-    top: 10%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--white);
     border-radius: 20px 20px 25% 20px;
     padding: 25px;

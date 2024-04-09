@@ -1,0 +1,228 @@
+.attribution { 
+    font-size: 11px; text-align: center; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid var(--dark-grayish-cyan);
+    font-family: spacemono-reg;
+    padding: 5px;
+    width: fit-content;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
+* {
+    margin: 0;
+}
+
+@font-face {
+    font-family: spacemono-reg;
+    src: url("assets/fonts/SpaceMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: spacemono-bold;
+    src: url("assets/fonts/SpaceMono-Bold.ttf");
+}
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    background-color: var(--light-grayish-cyan);
+}
+
+.maincard {
+    height: 55%;
+    width: 45%;
+    background-color: var(--white);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-family: spacemono-bold;
+    color: var(--grayish-cyan);
+}
+
+.input {
+    padding: 20px;
+}
+
+.icon-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+}
+
+.icon-bar.border {
+    border: 2px solid var(--strong-cyan);
+    border-radius: 5px;
+}
+
+.icon-bar img {
+    padding: 11.5px;
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: 5px 0 0 5px;
+} 
+
+.icon-bar input {
+    width: 80%;
+    padding: 5px 5px 5px 15px;
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    color: var(--very-dark-cyan);
+    font-family: spacemono-bold;
+    font-size: 20px;
+    border-radius: 0 5px 5px 0;
+    text-align: right;
+}
+
+.icon-bar input:focus {
+    outline: none;
+    font-family: spacemono-reg;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.tabs {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.tab {
+    width: 5em;
+    height: 40px;
+    background-color: var(--very-dark-cyan);
+    text-align: center;
+    align-content: center;
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: spacemono-bold;
+    font-size: 16.25px;
+}
+
+tab:disabled {
+    cursor: not-allowed;
+}
+
+input#custom {
+    font-size: 15.5px;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--grayish-cyan);
+    width: 5em;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+    border-radius: 5px;
+    border: none;
+    font-family: spacemono-bold;
+}
+
+input#custom:focus {
+    outline: none;
+    border: 2px solid var(--strong-cyan);
+}
+
+#cont-ppl {
+    position: relative;
+}
+
+.error {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    font-size: smaller;
+    display: none;
+    color: red;
+}
+
+.tab.active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    outline: none;
+}
+
+.cont, .tip-select-cont {
+    margin: 10px 0;
+}
+
+.calc {
+    background-color: var(--very-dark-cyan);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.calc-cont {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.amt-info {
+    color: var(--white);
+}
+
+.p-p {
+    color: var(--dark-grayish-cyan);
+}
+
+.amt-cont {
+    max-height: 100%;
+    font-size: 30px;
+    text-align: right;
+    width: 70%;
+    color: var(--strong-cyan);
+    align-content: end;
+}
+
+.reset {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    text-align: center;
+    align-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.reset:hover {
+    background-color: var(--light-grayish-cyan);
+}
