@@ -1,3 +1,19 @@
+.attribution { 
+    font-size: 11px; text-align: center; 
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid hsl(292, 42%, 14%);
+    font-family: opensans;
+    padding: 5px;
+    width: fit-content;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
 @font-face {
     font-family: opensans;
     src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
