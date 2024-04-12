@@ -8,34 +8,37 @@ const reset_button = document.getElementsByClassName("reset").item(0);
 
 var bill_amt;
 var nop;
-var counter = 0;
 
 const dyna_check_and_eval = () => {
     const active_tab = document.getElementsByClassName("active").item(0);
-    if (active_tab && bill_amt != null && nop != null) {
+    if (active_tab && bill_amt != null && nop != null && nop != 0) {
         calculate(parseFloat(bill_amt), parseFloat(nop));
-    } 
+    } else {
+        total_pp.textContent = "$0.00";
+        tip_pp.textContent = "$0.00";
+    }
 }
 
 const checkfor0 = () => {
     if (inp_person.value == 0) {
         const error_para = document.getElementsByClassName("error").item(0);
         error_para.style.display = "block";
+        total_pp.textContent = "$0.00";
+        tip_pp.textContent = "$0.00";
     }
 }
 
-const custom_per = () => {
-    custom.classList.add("active");
-    for (i = 0; i < tabs.length; i++) {
-        tabs[i].disabled = true;
+const custom_per = (event) => {
+    if (event.currentTarget.classList.contains("active")) {
+        event.currentTarget.classList.remove("active");
+    } else {
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+        custom.classList.remove("active");
+        event.currentTarget.classList.add("active");
     }
-
-    if (counter < 2) {
-        counter++;
-    } else if (counter = 2) {
-        calculate(parseFloat(bill_amt), parseFloat(nop));;
-        counter = 0;
-    }
+    dyna_check_and_eval();
 }
 
 const border_change = (event) => {
@@ -47,15 +50,13 @@ const reset = () => {
     inp_person.value = "";
     for (i = 0; i < tabs.length; i++) {
         tabs[i].classList.remove("active");
-        tabs[i].disabled = false;
     }
+    custom.classList.remove("active");
+    custom.value = "";
     total_pp.textContent = "$0.00";
     tip_pp.textContent = "$0.00";
-    counter = 0;
-    inp_bill.disabled = false;
-    inp_person.disabled = false;
-    custom.value = "";
-    custom.disabled = false;
+    bill_amt = "";
+    nop = "";
 }
 
 const calculate = (b_amt, noop) => {
@@ -80,41 +81,27 @@ const calculate = (b_amt, noop) => {
 }
 
 const select = (event) => {
-    event.currentTarget.classList.add("active");
-
-    for (i = 0; i < tabs.length; i++) {
-        if (!tabs[i].classList.contains("active")) {
-            tabs[i].disabled = true;
+    if (event.currentTarget.classList.contains("active")) {
+        event.currentTarget.classList.remove("active");
+    } else {
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
         }
+        custom.classList.remove("active");
+        event.currentTarget.classList.add("active");
     }
-
-    custom.disabled = true;
-
-    if (counter < 2) {
-        counter++;
-    } else if (counter = 2) {
-        calculate(parseFloat(bill_amt), parseFloat(nop));;
-        counter = 0;
-    }
+    dyna_check_and_eval();
 }
 
 change_bill_amt = (event) => {
     bill_amt = inp_bill.value;
     event.currentTarget.parentElement.classList.remove("border");
-    inp_bill.disabled = true;
-    if (counter < 2) {
-        counter++;
-    } else if (counter = 2) {
-        calculate(parseFloat(bill_amt), parseFloat(nop));;
-        counter = 0;
-    }
+    dyna_check_and_eval();
 }
 
 change_nop = (event) => {
     nop = inp_person.value;
     event.currentTarget.parentElement.classList.remove("border");
-    inp_person.disabled = true;
-
     if (nop == 0) {
         const error_para = document.getElementsByClassName("error").item(0);
         error_para.style.display = "block";
@@ -122,17 +109,11 @@ change_nop = (event) => {
         const error_para = document.getElementsByClassName("error").item(0);
         error_para.style.display = "none";
     }
-
-    if (counter < 2) {
-        counter++;
-    } else if (counter = 2) {
-        calculate(parseFloat(bill_amt), parseFloat(nop));;
-        counter = 0;
-    }
+    dyna_check_and_eval();
 }
 
-inp_bill.addEventListener("change", change_bill_amt)
-inp_person.addEventListener("change", change_nop)
+inp_bill.addEventListener("input", change_bill_amt)
+inp_person.addEventListener("input", change_nop)
 inp_bill.addEventListener("focus", border_change);
 inp_person.addEventListener("focus", border_change);
 inp_person.addEventListener("input", checkfor0)
