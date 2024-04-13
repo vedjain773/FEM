@@ -226,3 +226,16 @@ input#custom:focus {
 .reset:hover {
     background-color: var(--light-grayish-cyan);
 }
+
+@media screen and (max-width: 450px) {
+    .attribution {
+        display: none;
+    }
+
+    .maincard {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+}
