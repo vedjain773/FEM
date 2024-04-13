@@ -50,7 +50,7 @@ body {
 }
 
 .mainbox {
-    min-height: 70%;
+    min-height: fit-content;
     height: max-content;
     width: 40%;
     position: absolute;
