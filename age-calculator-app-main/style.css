@@ -71,7 +71,6 @@ body {
     position: absolute;
     padding: 15px;
     border-radius: 50%;
-    top: 22%;
     right: 25px;
     z-index: 2;
 }
@@ -146,6 +145,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     font-family: poppins-italic-bold;
+    margin-top: 20px;
 }
 
 .calc div {
@@ -171,4 +171,90 @@ input::placeholder {
 
 .purp-circle.invalid {
     transform: translateY(15px);
+}
+
+@media screen and (max-width: 450px) {
+    .attribution {
+        display: none;
+    }
+    
+    .mainbox {
+        min-height: fit-content;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .inputs {
+        gap: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        height: 20px;
+        width: 5rem;
+    }
+
+    .inp-grp p {
+        font-size: 8px;
+    }
+
+    .calc div {
+        font-size: 4em;
+    }
+
+    .purp-circle {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .purp-circle  img {
+        height: 17px;
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .attribution {
+        display: none;
+    }
+    
+    .mainbox {
+        min-height: fit-content;
+        width: 80%;
+        padding: 20px;
+    }
+
+    .inputs {
+        gap: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        height: 20px;
+        width: 4rem;
+    }
+
+    .inp-grp p {
+        font-size: 8px;
+    }
+
+    .calc div {
+        font-size: 3.5em;
+    }
+
+    .purp-circle {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .purp-circle  img {
+        height: 17px;
+        width: 20px;
+    }
 }

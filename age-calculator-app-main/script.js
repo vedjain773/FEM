@@ -125,3 +125,17 @@ const main = () => {
         }
     }
 }
+
+const reset = () => {
+    inp_days.value = "";
+    inp_months.value = "";
+    inp_years.value = "";
+
+    const inputs = document.getElementsByClassName("inputs").item(0);
+    var height = inputs.style.height;
+    var padding = inputs.style.padding;
+    const purp = document.getElementsByClassName("purp-circle").item(0);
+    purp.computedStyleMap.top = height + padding;
+}
+
+window.addEventListener("load", reset);
