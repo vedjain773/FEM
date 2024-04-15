@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <div class="calculator">
+    <div class="one-two-three">
+      <label for="grp1">1</label>
+      <label for="grp1">2</label>
+      <label for="grp1">3</label>
+    </div>
+    <div class="heading">
+      <p class="heading">calc</p>
+        <div class="container">
+          <p>THEME</p>
+          <fieldset class="theme-toggler">
+            <input type="radio" id="theme1" class="tt" name="grp1" checked>
+            <input type="radio" id="theme2" class="tt" name="grp1">
+            <input type="radio" id="theme3" class="tt" name="grp1">
+          </fieldset>
+        </div>
+    </div>
+    <input class="display" disabled></input>
+    <div class="button-input">
+      <button class="num">7</button>
+      <button class="num">8</button>
+      <button class="num">9</button>
+      <button class="func" id="del">Del</button>
+      <button class="num">4</button>
+      <button class="num">5</button>
+      <button class="num">6</button>
+      <button class="op">+</button>
+      <button class="num">1</button>
+      <button class="num">2</button>
+      <button class="num">3</button>
+      <button class="op">-</button>
+      <button class="op">.</button>
+      <button class="num" id="zero">0</button>
+      <button class="op">/</button>
+      <button class="op">*</button>
+      <button class="func" id="reset">RESET</button>
+      <button class="func" id="equals">=</button>
+    </div>
+  </div>
+</body>
+</html>

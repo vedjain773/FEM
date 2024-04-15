@@ -132,10 +132,15 @@ const reset = () => {
     inp_years.value = "";
 
     const inputs = document.getElementsByClassName("inputs").item(0);
-    var height = inputs.style.height;
-    var padding = inputs.style.padding;
+    var height = parseFloat(window.getComputedStyle(inputs).getPropertyValue("height"));
+    var padding = parseFloat(window.getComputedStyle(inputs).getPropertyValue("padding-bottom"));
+    
     const purp = document.getElementsByClassName("purp-circle").item(0);
-    purp.computedStyleMap.top = height + padding;
+
+    const top_val = height + padding;
+    const top_string = top_val.toString() + "px";
+
+    purp.style.top = top_string;
 }
 
 window.addEventListener("load", reset);
