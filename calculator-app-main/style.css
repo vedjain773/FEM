@@ -1,0 +1,218 @@
+:root:has(#theme1:checked) {
+    --main-bg: hsl(222, 26%, 31%);
+    --tog-keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --key-func-bg: hsl(225, 21%, 49%);
+    --key-func-shadow: hsl(224, 28%, 35%);
+    --equals-bg: hsl(6, 63%, 50%);
+    --equals-shadow: hsl(6, 70%, 34%);
+    --key-normal-bg: hsl(30, 25%, 89%);
+    --key-normal-shadow: hsl(28, 16%, 65%);
+    --key-main-text: hsl(221, 14%, 31%);
+    --key-special-text: hsl(0, 0%, 100%);
+    --info-clr: hsl(0, 0%, 100%);
+}
+
+:root:has(#theme2:checked) {
+    --main-bg: hsl(0, 0%, 90%);
+    --tog-keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 5%, 81%);
+    --key-func-bg: hsl(185, 42%, 37%);
+    --key-func-shadow: hsl(185, 58%, 25%);
+    --equals-bg: hsl(25, 98%, 40%);
+    --equals-shadow: hsl(25, 99%, 27%);
+    --key-normal-bg: hsl(45, 7%, 89%);
+    --key-normal-shadow: hsl(35, 11%, 61%);
+    --key-main-text: hsl(60, 10%, 19%);
+    --key-special-text: hsl(0, 0%, 100%);
+    --info-clr: hsl(60, 10%, 19%);
+}
+
+:root:has(#theme3:checked) {
+    --main-bg: hsl(268, 75%, 9%);
+    --tog-keypad-bg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+    --key-func-bg: hsl(281, 89%, 26%);
+    --key-func-shadow: hsl(285, 91%, 52%);
+    --equals-bg: hsl(176, 100%, 44%);
+    --equals-shadow: hsl(177, 92%, 70%);
+    --key-normal-bg: hsl(268, 47%, 21%);
+    --key-normal-shadow: hsl(290, 70%, 36%);
+    --key-main-text: hsl(52, 100%, 62%);
+    --key-special-text: hsl(0, 0%, 100%);
+    --info-clr: hsl(52, 100%, 62%);
+}
+
+@font-face {
+    font-family: league-spartan-reg;
+    src: url("assets/font/static/LeagueSpartan-Regular.ttf");
+}
+
+@font-face {
+    font-family: league-spartan;
+    src: url("assets/font/static/LeagueSpartan-Bold.ttf");
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: league-spartan;
+    height: 100vh;
+    position: relative;
+    background-color: var(--main-bg);
+}
+
+.one-two-three {
+    font-size: 12px;
+    font-family: league-spartan-reg;
+    color: var(--info-clr);
+    float: right;
+    text-align: right;
+}
+
+.one-two-three label {
+    padding: 0 5px;
+}
+
+.heading {
+    color: var(--info-clr);
+}
+
+.theme-toggler {
+    width: fit-content;
+    padding: 0;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    border: none;
+    background-color: var(--tog-keypad-bg);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container p {
+    font-family: league-spartan-reg;
+    font-size: 13px;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    color: var(--info-clr);
+}
+
+input[type="radio"] {
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--equals-bg);
+    outline-offset: 3px;
+}
+
+.calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-rows: 1% 9% 20% 70%;
+    gap: 10px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.display {
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    font-size: 1.75em;
+    padding: 20px 20px 20px 0;
+    font-family: league-spartan;
+    text-align: right;
+    background-color: var(--screen-bg);
+    border: none;
+    color: var(--info-clr);
+}
+
+.button-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    padding: 15px;
+    gap: 15px;
+    background-color: var(--tog-keypad-bg);
+    border-radius: 10px;
+}
+
+.button-input button {
+    border: none;
+    font-family: league-spartan;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+.button-input button:hover {
+    cursor: pointer;
+}
+
+.button-input button:focus {
+    outline: none;
+}
+
+.button-input button:disabled {
+    cursor: not-allowed;
+}
+
+.func {
+    background-color: var(--key-func-bg);
+    box-shadow: 0 5px var(--key-func-shadow);
+    color: var(--key-special-text);
+}
+
+.func:active {
+    box-shadow: 0 2px var(--key-func-shadow);
+    transform: translateY(3px);
+}
+
+.num, .op {
+    background-color: var(--key-normal-bg);
+    box-shadow: 0 5px var(--key-normal-shadow);
+    color: var(--key-main-text);
+}
+
+.num:active, .op:active {
+    box-shadow: 0 2px var(--key-normal-shadow);
+    transform: translateY(3px);
+}
+
+#equals {
+    background-color: var(--equals-bg);
+    box-shadow: 0 5px var(--equals-shadow);
+}
+
+#equals:active {
+    box-shadow: 0 2px var(--equals-shadow);
+    transform: translateY(3px);
+}
+
+#reset {
+    grid-column: 1 / 3;
+}
+
+#equals {
+    grid-column: 3 / 5;
+}

@@ -61,6 +61,10 @@ nav a {
     font-size: 15px;
 }
 
+nav div, nav#mob-nav {
+    display: none;
+}
+
 nav a:hover {
     color: var(--soft-red);
 }
@@ -112,7 +116,7 @@ nav a:hover {
 }
 
 .news-sec {
-    padding-bottom: 10px;
+    padding: 15px 0;
 }
 
 .border {
@@ -189,7 +193,7 @@ nav a:hover {
 
 .top img {
     height: 85%;
-    width: 70%;
+    max-width: 30%;
     padding: 5px;
 }
 
@@ -219,4 +223,80 @@ nav a:hover {
     font-family: inter-reg;
     font-size: 0.75em;
     color: var(--grayish-blue);
+}
+
+@media screen and (max-width: 450px) {
+    .attribution {
+        display: none;
+    }
+
+    nav {
+        width: 90%;
+    }
+
+    nav sec {
+        display: none;
+    }
+
+    nav div {
+        display: block;
+    }
+
+    nav#mob-nav.active {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        background-color: var(--off-white);
+        height: 100vh;
+        display: block;
+    }
+
+    nav#mob-nav.active img {
+        margin-left: 80%;
+        margin-bottom: 10px;
+    }
+
+    nav#mob-nav.active sec {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    nav#mob-nav.active sec a {
+        font-size: 20px;
+        text-decoration: none;
+        color: var(--very-dark-blue);
+    }
+
+    nav#mob-nav.active sec a:hover {
+        color: var(--soft-red);
+    }
+
+    .maincon {
+        height: fit-content;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .maincon img {
+        padding-left: 5px;
+        height: 200px;
+    }
+
+    .text-only {
+        font-size: 2em;
+    }
+
+    .top img {
+        max-width: 30%;
+        height: 100px;
+    }
+
+    .more-text {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
 }

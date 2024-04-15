@@ -207,7 +207,7 @@ input::placeholder {
 
     .purp-circle {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, 0);
     }
 
     .purp-circle  img {
@@ -250,7 +250,7 @@ input::placeholder {
 
     .purp-circle {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, 0);
     }
 
     .purp-circle  img {
