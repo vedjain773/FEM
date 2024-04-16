@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: mon-reg;
+        src: url("../assets/fonts/Montserrat-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: mon-med;
+        src: url("../assets/fonts/Montserrat-Medium.ttf");
+    }
+
+    @font-face {
+        font-family: fra-bold;
+        src: url("../assets/fonts/Fraunces_144pt_SuperSoft-Bold.ttf");
+    }
+}
