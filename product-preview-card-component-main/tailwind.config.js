@@ -19,6 +19,10 @@ module.exports = {
         "mon-reg": ["mon-reg"],
         "mon-med": ["mon-med"],
         "fra-bold": ["fra-bold"]
+      },
+
+      screens: {
+        "sm": "375px"
       }
     },
   },
