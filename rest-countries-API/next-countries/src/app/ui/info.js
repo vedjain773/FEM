@@ -2,7 +2,7 @@ import styles from "@/app/page.module.css";
 import countries from "../../../public/data.json";
 
 export default function Info({code}) {
-    var tar_obj, i, j, k, l;
+    var tar_obj, i, j;
 
     for (i = 0; i < countries.length; i++) {
         if (countries[i].alpha3Code == code) {
