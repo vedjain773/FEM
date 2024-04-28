@@ -1,26 +1,21 @@
-"use client";
-
 import Nav from "@/app/ui/nav";
 import Info from "@/app/ui/info";
+import codes from "@/../../public/codes.json";
 import BacktoHome from "@/app/ui/BacktoHome";
-import { useParams } from "next/navigation";
 
-export default function MoreInfo() {
-    const params = useParams();
-
+export default function MoreInfo({params}) {
+    const { code } = params;
     return (
         <div>
             <Nav />
             <BacktoHome />
-            <Info code={params.code}/>
+            <Info code={code}/>
         </div>
     );
 }
 
 export async function generateStaticParams() {
-    const countries = await fetch("http://localhost:3000/country").then((res) => res.json())
-
-    return countries.map((country) => ({
+    return codes.map((country) => ({
         code: country.code
     }))
 }
