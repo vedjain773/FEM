@@ -27,7 +27,7 @@ export default function Info({code}) {
                     <p>Native Name: {tar_obj.nativeName}</p>
                     <p>Top level domain: {tar_obj.topLevelDomain[0]}</p>
                     <p>Population: {tar_obj.population}</p>
-                    <p>Currencies: {tar_obj.currencies[0].name}</p>
+                    <p>Currencies: {tar_obj.currencies[0].name || "-"}</p>
                     <p>Region: {tar_obj.region}</p>
                     <p>Languages: {languages(tar_obj)}</p>
                     <p>Subregion: {tar_obj.subregion}</p>
