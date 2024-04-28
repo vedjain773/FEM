@@ -711,3 +711,39 @@ video {
 .line-through {
   text-decoration-line: line-through;
 }
+
+@media (min-width: 375px) {
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:w-4\/5 {
+    width: 80%;
+  }
+
+  .sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .sm\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  @media not all and (min-width: 768px) {
+    .sm\:max-md\:h-1\/4 {
+      height: 25%;
+    }
+
+    .sm\:max-md\:w-4\/5 {
+      width: 80%;
+    }
+
+    .sm\:max-md\:grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .sm\:max-md\:grid-rows-2 {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
