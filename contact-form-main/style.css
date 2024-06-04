@@ -1,0 +1,182 @@
+:root {
+    --green-200: hsl(148, 38%, 91%);
+    --green-600: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(186, 15%, 59%);
+    --grey-900: hsl(187, 24%, 22%);
+}
+
+@font-face {
+    font-family: karla;
+    src: url("./assets/fonts/Karla-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: karla;
+    background-color: var(--green-200);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    background-color: var(--white);
+    width: 40%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label, p {
+    color: var(--grey-900);
+}
+
+h3 {
+    font-size: 25px;
+    color: var(--grey-900);
+    margin-bottom: 10px;
+}
+
+#names {
+    display: flex;
+    justify-content: space-between;
+}
+
+#names section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#mail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#queries {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#queries section {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid var(--grey-500);
+    border-radius: 5px;
+}
+
+input {
+    border: 1px solid var(--grey-500);
+    border-radius: 5px;
+    height: 3em;
+    font-family: karla;
+    padding: 10px;
+}
+
+input:focus, input:hover {
+    border: 1px solid var(--green-600);
+    outline: none;
+}
+
+#consent, #supRq, #genEq {
+    height: initial;
+    padding: initial;
+}
+
+#supRq, #genEq {
+    margin-right: 5px;
+}
+
+#supRq:checked, #genEq:checked, #consent {
+    accent-color: var(--green-600);
+}
+
+#supRqCont:has(#supRq:checked), #genEqCont:has(#genEq:checked) {
+    border: 1px solid var(--green-600);
+    background-color: var(--green-200);
+}
+
+#consent {
+    margin-right: 5px;
+}
+
+span.consent {
+    display: block;
+    margin-top: 5px;
+}
+
+#sub {
+    border: none;
+    font-family: karla;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--green-600);
+    width: 100%;
+    color: var(--white);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#sub:hover {
+    background-color: var(--grey-900);
+}
+
+span {
+    color: var(--grey-500);
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--red);
+}
+
+#msgsent {
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid var(--grey-500);
+    background-color: var(--grey-900);
+    color: var(--white);
+}
+
+#msgsent div {
+    display: flex;
+    vertical-align: middle;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+    main {
+        padding: 10px;
+        width: 85%;
+    }
+
+    #names {
+        flex-direction: column;
+    }
+
+    #names section {
+        width: 100%;
+    }
+
+    #queries {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    #queries section {
+        width: 100%;
+    }
+}

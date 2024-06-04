@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Contact form</title>
+</head>
+
+<body>
+
+  <dialog id="msgsent">
+    <div id="close"><img src="./assets/images/icon-success-check.svg">Message Sent !</div><br>
+    Thanks for completing the form, we'll be in touch soon!
+  </dialog>
+
+  <main class="cont">
+    <h3>Contact Us</h3>
+
+    <div id="names">
+      <section>
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname" required>
+        <span class="error fname"></span>
+      </section>
+
+      <section>
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname" required>
+        <span class="error lname"></span>
+      </section>
+    </div>
+
+    <div id="mail">
+      <label for="emailId">Email Address</label>
+      <input type="email" name="emailId" id="emailId" required>
+      <span class="error emailId"></span>
+    </div>
+
+    <p>Query type</p>
+    <div id="queries">
+      <section id="genEqCont">
+        <input type="radio" name="qType" id="genEq">
+        <label for="genEq">General Enquiry</label>
+      </section>
+
+      <section id="supRqCont">
+        <input type="radio" name="qType" id="supRq">
+        <label for="supRq">Support Request</label>
+      </section>
+    </div>
+    <span class="error queries"></span>
+
+    <div id="message">
+      <label for="msgArea">Message</label>
+      <input type="text" name="msgArea" id="msgArea" required>
+      <span class="error msgArea"></span>
+    </div>
+
+    <div id="consentArea">
+      <input type="checkbox" name="consent" id="consent">
+      <label for="consent">I consent to being contacted by the team</label><br>
+      <span class="error consent"></span>
+    </div>
+
+    <button id="sub">Submit</button>
+
+  </main>
+</body>
+
+</html>
