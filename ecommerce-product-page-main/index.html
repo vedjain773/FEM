@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="actnav">
+    <div id="cont">
+      <img src="./images/icon-close.svg" alt="close" id="close">
+      <a href="">Collections</a>
+      <a href="">Men</a>
+      <a href="">Women</a>
+      <a href="">About</a>
+      <a href="">Contact</a>
+    </div>
+  </div>
+  <nav>
+    <section>
+      <img src="./images/logo.svg" alt="logo-svg">
+      <a href="">Collections</a>
+      <a href="">Men</a>
+      <a href="">Women</a>
+      <a href="">About</a>
+      <a href="">Contact</a>
+    </section>
+    <section>
+      <img src="./images/icon-cart.svg" alt="cart" id="cart">
+      <img src="./images/image-avatar.png" alt="avatar">
+    </section>
+    <div id="popup">
+      <p id="title">Cart</p>
+      <div class="actCart">
+        <p id="ifhasnt">Your cart is empty.</p>
+        <div id="ifhas">
+          <div id="info">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="th" id="th">
+            <p>Fall Limited Edition Sneakers<br> $125 x <span id="quan"></span> <span id="total"></span></p>
+            <img src="./images/icon-delete.svg" alt="del" id="del">
+          </div>
+          <button>Checkout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="mob-nav">
+    <section>
+      <img src="./images/icon-menu.svg" alt="menu" id="open">
+      <img src="./images/logo.svg" alt="logo">
+    </section>
+    <section>
+        <img src="./images/icon-cart.svg" alt="cart" id="cart2">
+        <img src="./images/image-avatar.png" alt="avatar">
+    </section>
+    <div id="popup2">
+      <p id="title2">Cart</p>
+      <div class="actCart2">
+        <p id="ifhasnt2">Your cart is empty.</p>
+        <div id="ifhas2">
+          <div id="info2">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="th" id="th2">
+            <p>Fall Limited Edition Sneakers<br> $125 x <span id="quan2"></span> <span id="total2"></span></p>
+            <img src="./images/icon-delete.svg" alt="del" id="del2">
+          </div>
+          <button>Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="img-sec">
+      <div class="primary">
+        <img id="pr-img" src="./images/image-product-1.jpg"></img>
+      </div>
+      <div class="grp">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="th-1" class="img-btn" id="one">
+        <img src="./images/image-product-2-thumbnail.jpg" alt="th-2" class="img-btn" id="two">
+        <img src="./images/image-product-3-thumbnail.jpg" alt="th-3" class="img-btn" id="three">
+        <img src="./images/image-product-4-thumbnail.jpg" alt="th-4" class="img-btn" id="four">
+      </div>
+    </section>
+    <section class="right">
+      <p id="small">SNEAKER COMPANY</p>
+      <p id="bold">Fall Limited Edition Sneakers</p>
+      <p id="desc">
+        These low profile sneakers are your casual wear companions.
+        Featuring a durable rubber outer sole, they'll withstand 
+        everything the weather has to offer.
+      </p>
+      <div id="p-d">
+        <span id="price">$125.00</span>
+        <span id="discount">50%</span>
+      </div>
+      <p id="strike">$250</p>
+      <div class="btn-grp">
+        <div id="quantity">
+          <img src="./images/icon-minus.svg" alt="minus" id="minus">
+          <p id="num">0</p>
+          <img src="./images/icon-plus.svg" alt="plus" id="plus">
+        </div>
+        <div id="addtocart">
+          <img src="./images/icon-cart.svg" alt="cart">
+          <p>Add to Cart</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
