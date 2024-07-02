@@ -1,0 +1,122 @@
+@font-face {
+    font-family: josefin;
+    src: url("./../../public/font/JosefinSans-VariableFont_wght.ttf");
+}
+
+:root:has(#dark) {
+    --bg-clr: hsl(235, 21%, 11%);
+    --bg-img: url("./../../public/images/bg-desktop-dark.jpg");
+    --input-listItem: hsl(235, 24%, 19%);
+    --accent-brdr: hsl(237, 14%, 26%);
+    --text-clr: hsl(234, 39%, 85%);
+    --circle-fill: hsl(234, 11%, 52%);
+    --strike-txt: hsl(233, 14%, 35%);
+}
+
+:root:has(#light) {
+    --bg-clr: hsl(0, 0%, 98%);
+    --bg-img: url("./../../public/images/bg-desktop-light.jpg");
+    --input-listItem: hsl(236, 33%, 92%);
+    --accent-brdr: hsl(233, 11%, 84%);
+    --text-clr: hsl(237, 14%, 26%);
+    --circle-fill: hsl(236, 9%, 61%);
+    --strike-txt: hsl(236, 9%, 61%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: josefin;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-clr);
+}
+
+body::before {
+    z-index: 0;
+    content: "";
+    display: block;
+    position: relative;
+    top: 0;
+    height: 40%;
+    width: 100%;
+    background: var(--bg-img);
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    width: 33%;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#header p {
+    font-weight: 600;
+    letter-spacing: 15px;
+    font-size: 2.25em;
+    color: white;
+}
+
+#taskInput {
+    border: none;
+    background: var(--input-listItem);
+    width: 100%;
+    padding: 12px;
+    color: var(--text-clr);
+    font-size: 1.35em;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    caret-color: blue;
+}
+
+#taskInput:focus {
+    outline: none;
+}
+
+#dark {
+    height: 26px;
+    width: 26px;
+    cursor: pointer;
+    background: url("./../../public/images/icon-sun.svg");
+}
+
+#light {
+    height: 26px;
+    width: 26px;
+    cursor: pointer;
+    background: url("./../../public/images/icon-moon.svg");
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+@media only screen and (max-width: 450px) {
+    body::before {
+        height: 34%;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    #completed, #left {
+        display: none;
+    }
+
+    #info {
+        justify-content: center;
+    }
+}
