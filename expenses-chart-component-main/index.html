@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main>
+    <div id="red">
+      <section>
+        <p>My Balance</p>
+        <p id="money">$921.48</p>
+      </section>
+      <img src="./images/logo.svg" alt="logo">
+    </div>
+
+    <div id="white">
+      <p id="spend">Spending - Last 7 days</p>
+      <div id="graph">
+        <div class="bar mon"><span id="mon">$17.45</span></div>
+        <div class="bar tue"><span id="tue">$34.91</span></div>
+        <div class="bar wed"><span id="wed">$52.36</span></div>
+        <div class="bar thu"><span id="thu">$31.07</span></div>
+        <div class="bar fri"><span id="fri">$23.39</span></div>
+        <div class="bar sat"><span id="sat">$43.28</span></div>
+        <div class="bar sun"><span id="sun">$25.48</span></div>
+        
+        <p class="labels">mon</p>
+        <p class="labels">tue</p>
+        <p class="labels">wed</p>
+        <p class="labels">thu</p>
+        <p class="labels">fri</p>
+        <p class="labels">sat</p>
+        <p class="labels">sun</p>
+      </div>
+      <div id="total">
+        <section>
+          <p class="text">Total this month</p>
+          <p id="mon-tot">$478.33</p>
+        </section>
+        <section>
+          <p id="perc">+2.4%</p>
+          <div class="text">from last month</div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
