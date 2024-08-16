@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body>
+  <div id="title-sec">
+    <section id="pl-text">
+      <p>ROCK</p>
+      <p>PAPER</p>
+      <p>SCISSORS</p>
+    </section>
+    <section id="score-sec">
+      <p id="sid">SCORE</p>
+      <p id="score">0</p>
+    </section>
+  </div>
+  <main>
+    <div id="choose">
+      <div class="choice-cont">
+        <button class="circle paper choice"><img src="./images/icon-paper.svg" alt="paper"></button>
+        <button class="circle scissors choice"><img src="./images/icon-scissors.svg" alt="scissors"></button>
+        <button class="circle rock choice"><img src="./images/icon-rock.svg" alt="rock"></button>
+      </div>
+    </div>
+    <div id="result">
+      <p class="res-tex">YOU PICKED</p>
+      <p class="res-tex">THE HOUSE PICKED</p>
+      <button id="pc" class="circle-res"></button>
+      <button id="cc" class="circle-res"></button>
+      <div id="playAgain">
+        <p>YOU <span id="wolod"></span></p>
+        <button id="replay">PLAY AGAIN</button>
+      </div>
+    </div>
+  </main>
+  <button id="rules">RULES</button>
+  <dialog class="modal">
+    <div class="mod-title">
+      <div class="rule-word">RULES</div>
+      <img src="./images/icon-close.svg" alt="close" id="close">
+    </div>
+    <img src="./images/image-rules.svg" alt="rock beats scissors beat paper beats rock">
+  </dialog>
+</body>
+</html>
