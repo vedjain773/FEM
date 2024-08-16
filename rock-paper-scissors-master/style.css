@@ -1,0 +1,232 @@
+@font-face {
+    font-family: barlow;
+    src: url("./fonts/BarlowSemiCondensed-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: barlow-bold;
+    src: url("./fonts/BarlowSemiCondensed-Bold.ttf");
+}
+
+@keyframes colAni {
+    from { column-gap: 0px ;}
+    to { column-gap: 200px ;}
+}
+
+:root {
+    --dark-txt: hsl(229, 25%, 31%);
+    --score-txt: hsl(229, 64%, 46%);
+    --head-ol: hsl(217, 16%, 45%);
+}
+
+:root:has(#result) {
+    #result {
+        animation: colAni 1s ease-out forwards; 
+    }
+} 
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: calc(100vh - 15px);
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+#title-sec {
+    font-family: barlow-bold;
+    color: white;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin: 15px auto;
+    padding: 20px;
+    border: 3px solid var(--head-ol);
+    border-radius: 15px;
+
+    #pl-text {
+        font-size: 2em;
+    }
+
+    #score-sec {
+        width: 20%;
+        text-align: center;
+        color: var(--score-txt);
+        background-color: white;
+        border-radius: 8px;
+
+        #sid {
+            margin-top: 10px;
+            letter-spacing: 5px;
+        }
+
+        #score {
+            margin-top: 10px;
+            color: var(--dark-txt);
+            font-size: 3.5em;
+        }
+    }
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+
+    #choose {
+        display: block;
+        margin-top: 40px;
+
+        .choice-cont {
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+        }
+    }
+
+    .circle {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 15px solid;
+        position: absolute;
+    }
+
+    .rock {
+        border: 15px solid hsl(349, 71%, 52%);
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scissors {
+        border: 15px solid hsl(39, 89%, 49%);
+        right: 0;
+    }
+
+    .paper {
+        border: 15px solid hsl(230, 89%, 62%);
+        left: 0;
+    }
+
+    #result {
+        display: none;
+        position: relative;
+        grid-template-columns: 1fr 1fr;
+        font-family: barlow-bold;
+        place-items: center;
+        row-gap: 50px;
+        color: white;
+        font-size: 1.5em;
+        margin-top: 60px;
+    }
+
+    .circle-res {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 15px solid;
+    }
+
+    #pc, #cc {
+        background-color: transparent;
+        border: 1px solid white;
+    }
+
+    #playAgain {
+        display: none;
+        position: absolute;
+        top: 100px;
+        
+        p {
+            font-size: 2em;
+        }
+
+        button {
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: barlow;
+            padding: 10px;
+            width: 100%;
+        }
+    }
+
+    #playAgain:hover button {
+        color: red;
+    }
+}
+
+#rules {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1.25em;
+    border-radius: 8px;
+}
+
+.mod-title {
+    display: flex;
+    font-family: barlow;
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+dialog {
+    padding: 20px;
+    margin: 20vh auto;
+    border: none;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        height: max-content;
+    }
+
+    #title-sec {
+        width: 90%;
+        
+        #score-sec {
+            width: 35%;
+        }
+    }
+
+    #rules {
+        display: none;
+    }
+
+    main {
+        width: 90%;
+
+        #choose {
+            .choice-cont {
+                width: 100%;
+            }
+        }
+
+        #playAgain {
+            top: 250px;
+        }
+    }
+
+    :root:has(#result) {
+        #result {
+            animation: none; 
+        }
+    } 
+
+    .res-tex {
+        font-size: 0.75em;
+    }
+}
