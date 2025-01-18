@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <img src="./assets/images/pattern-circle.svg" alt="" class="bg-element circle">
+    <img src="./assets/images/pattern-lines.svg" alt="" class="bg-element lines">
+    <img src="./assets/images/pattern-squiggly-line-bottom.svg" alt="" class="bg-element squiggly-lb">
+    <img src="./assets/images/pattern-squiggly-line-top.svg" alt="" class="bg-element squiggly-lt">
+
+  <img src="./assets/images/logo-full.svg" alt="" id="logo-full">
+  <div class="header main">
+    <p class="first">Your Journey to Coding Conf 2025 Starts Here!</p>
+    <p class="second">Congrats, <span class="name"></span>! <br>Your ticket is ready!</p>
+  </div>
+
+  <div class="header sub">
+    <p class="first">Secure your spot at next year's biggest coding conference.</p>
+    <p class="second">We've mailed your ticket to <br><span class="fmail"></span> and will send <br>updates in the run up to the event</p>
+  </div>
+  
+  <div class="container">
+    <section class="form first">
+      <label for="avatar">Upload Avatar</label>
+      <div class="inpbox">
+        <div class="custom">
+          <img src="./assets/images/icon-upload.svg" class="avaph">
+          <p class="instructs">Click to upload</p>
+          <div class="img-buttons">
+            <button class="rem">Remove Image</button>
+            <button class="change">Change Image</button>
+          </div>
+        </div>
+        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
+      </div>
+  
+      <div class="info">
+        <img src="./assets/images/icon-info.svg" alt="info">
+        <span>Upload your image (JPG or PNG, max size: 5MB)</span>
+      </div>
+      
+      <label for="fname">Full Name</label>
+      <input type="text" name="fname" id="fname">
+      <div class="error e_fname">
+        <img src="./assets/images/icon-info.svg" alt="info" class="info_circle">
+        <span>This field is required</span>
+      </div>
+  
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" placeholder="example@email.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+      <div class="error e_mail">
+        <img src="./assets/images/icon-info.svg" alt="info" class="info_circle">
+        <span>Please enter a valid e-mail address</span>
+      </div>
+  
+      <label for="gitusername">Github Username</label>
+      <input type="text" name="gitusername" id="gitusername" placeholder="@yourusername">
+      <div class="error e_gituser">
+        <img src="./assets/images/icon-info.svg" alt="info" class="info_circle">
+        <span>This field is required</span>
+      </div>
+  
+      <button class="genButton">Generate My Ticket</button>
+    </section>
+    <div class="second ticket">
+      <img src="./assets/images/pattern-ticket.svg" alt="" class="tickern">
+      <div class="tinfo top-left">
+        <div class="hori-flex">
+          <img src="./assets/images/logo-mark.svg" alt="">
+          <div class="c-conf">Coding Conf</div>
+        </div>
+        <p class="date">Jan 31, 2025 / Austin, Texas</p>
+      </div>
+      <div class="tinfo bottom-left">
+        <img src="" alt="avatar" class="left">
+        <div class="right">
+          <p class="name"></p>
+          <div class="downinfo">
+            <img src="./assets/images/icon-github.svg">
+            <div class="gituser"></div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>
