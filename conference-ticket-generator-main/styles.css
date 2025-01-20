@@ -24,7 +24,6 @@ body {
   background: url("./assets/images/background-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
   overflow-x: hidden;
 }
 
@@ -345,8 +344,42 @@ span.fmail {
   input[type="file"] {
     width: 100%;
   }
-
+  
   .ticket {
-    transform: scale(0.75);
+    .tickern {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hori-flex {
+      img {
+        height: 20px;
+        aspect-ratio: 1;
+      }
+    }
+
+    .c-conf {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .date {
+      font-size: 15px;
+      margin-left: calc(20px + 10px);
+    }
+    
+    .bottom-left {
+      img.left {
+        height: 30px;
+      }
+
+      .name {
+        font-size: 20px;
+      }
+
+      .gituser {
+        font-size: 18px;
+      }
+    }
   }
 }
