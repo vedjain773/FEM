@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "leagues";
+    src: url("./design/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "leagues", sans-serif;
+}
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+img.bg {
+    position: absolute;
+    z-index: -1;
+}
+
+img.top {
+    top: 0;
+    left: 0;
+}
+
+img.bottom {
+    bottom: 0;
+    right: 0;
+}
+
+main {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.hero-txt {
+    font-size: 50px;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.sub-hero-txt {
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--dark-grayish-magenta);
+    font-weight: 500;
+}
+
+.rating-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating {
+    margin-left: 10rem;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--very-dark-magenta);
+    background: var(--light-grayish-magenta);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.two {
+    position: relative;
+    left: 40px;
+}
+
+.three {
+    position: relative;
+    left: 80px;
+}
+
+.cards {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-dark-magenta);
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-txt {
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.name {
+    color: var(--white);
+}
+
+.role {
+    color: var(--soft-pink);
+}
+
+.user-info img {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.review {
+    font-size: 17px;
+    color: var(--light-grayish-magenta);
+}
+
+.card.two {
+    position: relative;
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+
+.card.three {
+    position: relative;
+    top: 40px;
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 450px) {
+    main {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .hero-txt, .sub-hero-txt {
+        text-align: center;
+    }
+
+    .rating-sec {
+        margin-top: 20px;
+    }
+
+    .rating.one, .rating.two, .rating.three {
+        margin: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
