@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 export default function Hero() {
     return (
-        <div className="h-[100vh] mb-8">
+        <div className="mb-35">
             <Navbar />
             <main className="grid grid-cols-2 w-[90%] mx-auto mt-24">
                 <div className="flex flex-col">
