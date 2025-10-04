@@ -1,0 +1,16 @@
+.navbar {
+    width: 85%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+}
+
+.theme {
+    padding: 0.5rem;
+    background-color: var(--theme-btn);
+    border-radius: 12px;
+}
