@@ -1,0 +1,51 @@
+:root:has(#light) {
+  --background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  --nav-bg: hsl(200, 60%, 99%);
+  --theme-btn: hsl(0, 0%, 78%);
+  --filter-text: hsl(227, 75%, 14%);
+  --filter-btn-bg: hsl(200, 60%, 99%);
+  --filter-btn-active: hsl(3, 86%, 64%);
+  --filter-text-active: hsl(200, 60%, 99%);
+  --filter-btn-hover: hsl(0, 0%, 78%);
+  --card-bg: hsl(200, 60%, 99%);
+  --card-name: hsl(227, 75%, 14%);
+  --card-desc: hsl(226, 11%, 37%);
+  --card-btn: hsl(200, 60%, 99%);
+  --card-border: hsl(0, 0%, 78%);
+  --card-radio-bg: hsl(0, 0%, 78%);
+  --card-radio-bg-active: hsl(3, 86%, 64%);
+  --card-radio-checked: hsl(200, 60%, 99%);
+  --remove-btn-hover: hsl(3, 71%, 56%);
+}
+
+:root:has(#dark) {
+  --background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --nav-bg: hsl(226, 25%, 17%);
+  --theme-btn: hsl(225, 23%, 24%);
+  --filter-text: hsl(200, 60%, 99%);
+  --filter-btn-bg: hsl(226, 25%, 17%);
+  --filter-btn-active: hsl(3, 86%, 64%);
+  --filter-text-active: hsl(227, 75%, 14%);
+  --filter-btn-hover: hsl(0, 0%, 78%);
+  --card-bg: hsl(226, 25%, 17%);
+  --card-name: hsl(200, 60%, 99%);
+  --card-desc: hsl(0, 0%, 78%);
+  --card-btn: hsl(225, 23%, 24%);
+  --card-border: hsl(226, 11%, 37%);
+  --card-radio-bg: hsl(226, 11%, 37%);
+  --card-radio-bg-active: hsl(3, 86%, 64%);
+  --card-radio-checked: hsl(200, 60%, 99%);
+  --remove-btn-hover: hsl(3, 71%, 56%);
+}
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: var(--background);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
