@@ -76,8 +76,6 @@ Across the repository, projects may use:
 - HTML5 (semantic markup)
 - CSS3 (Flexbox, Grid, custom properties)
 - JavaScript (ES6+)
-- Responsive & mobile-first design
-- Accessibility best practices
 - Next.js
 - Tailwind CSS
 - Svelte
