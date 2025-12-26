@@ -50,7 +50,7 @@
                 class:active={unitConfig.temp}
                 onclick={() => change(1, true)}
             >
-                <div>Celcius (C)</div>
+                <div>Celcius (°C)</div>
                 <img src="/images/icon-checkmark.svg" alt="selected" />
             </button>
             <button
@@ -58,7 +58,7 @@
                 class:active={!unitConfig.temp}
                 onclick={() => change(1, false)}
             >
-                <div>Fahrenheit (F)</div>
+                <div>Fahrenheit (°F)</div>
                 <img src="/images/icon-checkmark.svg" alt="selected" />
             </button>
 

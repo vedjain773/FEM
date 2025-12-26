@@ -17,6 +17,11 @@
     }
 
     @font-face {
+        src: url("/fonts/DM_Sans/DMItallic.ttf");
+        font-family: "DM Sans Itallic";
+    }
+
+    @font-face {
         src: url("/fonts/Bricolage_Grotesque/BGVar.ttf");
         font-family: "Bricolage Grotesque";
     }
@@ -36,6 +41,7 @@
         --blue-700: hsl(248, 70%, 36%);
 
         --dm: "DM Sans";
+        --dmi: "DM Sans Itallic";
         --bg: "Bricolage Grotesque";
     }
 </style>

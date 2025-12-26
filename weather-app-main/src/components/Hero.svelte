@@ -25,6 +25,7 @@
         display: flex;
         justify-content: space-between;
         width: 90%;
+        gap: 1rem;
         margin: 3.75rem auto;
     }
 
@@ -35,6 +36,7 @@
         padding: 0.5em 1em;
         gap: 1em;
         border-radius: 10px;
+        flex: 1;
     }
 
     input,
