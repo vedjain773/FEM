@@ -32,7 +32,7 @@
     .cont {
         display: flex;
         align-items: center;
-        background-color: var(--neutral-700);
+        background-color: var(--neutral-800);
         padding: 0.5em 1em;
         gap: 1em;
         border-radius: 10px;
