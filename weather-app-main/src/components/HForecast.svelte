@@ -18,7 +18,7 @@
                     <img src="/images/icon-sunny.webp" alt="sunny" />
                     <div class="time">{hour}</div>
                 </section>
-                <div>20</div>
+                <div>20°</div>
             </div>
         {/each}
     </div>
