@@ -12,7 +12,7 @@
 <style>
     .today {
         width: 100%;
-        aspect-ratio: 2.797;
+        aspect-ratio: 2.5;
         background-image: url("/images/bg-today-large.svg");
         background-size: cover;
         background-repeat: no-repeat;
@@ -20,6 +20,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 1.25em;
+        border-radius: 2rem;
     }
 
     .left {

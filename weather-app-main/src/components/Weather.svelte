@@ -6,9 +6,11 @@
 </script>
 
 <div class="weather">
-    <Today />
-    <Stats />
-    <DForecast />
+    <div class="left">
+        <Today />
+        <Stats />
+        <DForecast />
+    </div>
     <HForecast />
 </div>
 
@@ -17,11 +19,17 @@
         width: 80%;
         display: grid;
         grid-template-columns: 70% 30%;
-        grid-template-rows: 4fr 2fr 3fr;
         row-gap: 1.5rem;
         column-gap: 1rem;
         margin: 0 auto;
         max-height: 100vh;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-around;
     }
 
     @media screen and (max-width: 600px) {

@@ -19,7 +19,6 @@
 
 <style>
     .stats {
-        grid-row: 2 / 3;
         grid-column: 1 / 2;
         display: flex;
         justify-content: space-between;
@@ -36,6 +35,7 @@
         flex-direction: column;
         justify-content: space-between;
         border-radius: 1rem;
+        gap: 1.5rem;
     }
 
     .header {

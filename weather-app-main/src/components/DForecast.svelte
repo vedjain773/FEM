@@ -20,9 +20,7 @@
 
 <style>
     .dforecast {
-        grid-row: 3 / -1;
         grid-column: 1 / 2;
-        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -37,7 +35,6 @@
     }
 
     .cont {
-        flex: 1;
         display: flex;
         gap: 1rem;
     }

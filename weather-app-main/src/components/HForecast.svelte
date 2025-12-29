@@ -32,6 +32,7 @@
         grid-column: 2 / 3;
         display: flex;
         flex-direction: column;
+        max-height: 100vh;
     }
 
     .opt-cont {
