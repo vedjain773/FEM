@@ -50,4 +50,25 @@
         width: 1.25em;
         height: auto;
     }
+
+    @media screen and (max-width: 600px) {
+        .today {
+            flex-direction: column;
+            aspect-ratio: 1;
+            justify-content: space-evenly;
+            border-radius: 2rem;
+        }
+
+        .place {
+            font-size: 2.25rem;
+        }
+
+        .date {
+            font-size: 1.5rem;
+        }
+
+        .right {
+            font-size: 5rem;
+        }
+    }
 </style>

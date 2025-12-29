@@ -7,9 +7,9 @@
 
 <div class="weather">
     <Today />
-    <HForecast />
     <Stats />
     <DForecast />
+    <HForecast />
 </div>
 
 <style>
@@ -22,5 +22,13 @@
         column-gap: 1rem;
         margin: 0 auto;
         max-height: 100vh;
+    }
+
+    @media screen and (max-width: 600px) {
+        .weather {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>

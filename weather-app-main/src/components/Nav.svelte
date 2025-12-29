@@ -14,4 +14,10 @@
         display: flex;
         justify-content: space-between;
     }
+
+    @media screen and (max-width: 450px) {
+        nav {
+            width: 95%;
+        }
+    }
 </style>

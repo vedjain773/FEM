@@ -10,8 +10,8 @@
                 <p class="day">{day}</p>
                 <img src="/images/icon-sunny.webp" alt="sunny" />
                 <section>
-                    <div class="min">20°</div>
-                    <div class="max">14°</div>
+                    <div class="max">20°</div>
+                    <div class="min">14°</div>
                 </section>
             </div>
         {/each}
@@ -65,5 +65,27 @@
     section {
         display: flex;
         justify-content: space-between;
+    }
+
+    .min {
+        color: var(--neutral-200);
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 600px) {
+        .title {
+            font-size: 1.25rem;
+        }
+
+        .cont {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .card {
+            width: 100%;
+            font-size: 1.15rem;
+        }
     }
 </style>

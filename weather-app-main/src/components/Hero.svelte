@@ -11,7 +11,7 @@
 
 <style>
     .hero {
-        width: fit-content;
+        width: 100%;
         margin: 3.25rem auto;
     }
 
@@ -19,12 +19,13 @@
         color: var(--neutral-0);
         font-family: var(--bg);
         font-size: 3.25rem;
+        text-align: center;
     }
 
     section {
         display: flex;
         justify-content: space-between;
-        width: 90%;
+        width: 50%;
         gap: 1rem;
         margin: 3.75rem auto;
     }
@@ -37,6 +38,8 @@
         gap: 1em;
         border-radius: 10px;
         flex: 1;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     input,
@@ -57,5 +60,16 @@
         font-weight: 600;
         padding: 0.5em 1em;
         border-radius: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            width: 90%;
+            flex-direction: column;
+        }
     }
 </style>

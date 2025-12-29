@@ -30,12 +30,12 @@
         border-radius: 1rem;
         grid-row: 1 / -1;
         grid-column: 2 / 3;
-        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     .opt-cont {
         padding: 1em;
-        height: 100%;
         overflow-y: scroll;
     }
 
@@ -49,7 +49,7 @@
     .desc {
         color: var(--neutral-0);
         font-family: var(--dm);
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 600;
     }
 
@@ -78,5 +78,19 @@
     .options section img {
         width: 3em;
         height: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        .cont {
+            min-height: 100vh;
+        }
+
+        .time {
+            font-size: 1.5rem;
+        }
+
+        .desc {
+            font-size: 1.25rem;
+        }
     }
 </style>

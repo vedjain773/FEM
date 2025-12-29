@@ -46,4 +46,21 @@
     .data {
         font-size: 2rem;
     }
+
+    @media screen and (max-width: 600px) {
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .stat {
+            width: 100%;
+            gap: 1.75rem;
+        }
+
+        .header {
+            font-size: 1.25rem;
+        }
+    }
 </style>
