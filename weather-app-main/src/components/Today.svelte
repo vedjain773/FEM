@@ -1,3 +1,9 @@
+<script>
+    import { data } from "../shared";
+
+    $: temp = $data.current.temperature_2m;
+</script>
+
 <div class="today">
     <section class="left">
         <p class="place">Berlin, Germany</p>
@@ -5,7 +11,7 @@
     </section>
     <section class="right">
         <img src="/images/icon-sunny.webp" alt="weather-icon" />
-        <div class="temp">20°</div>
+        <div class="temp">{temp}°</div>
     </section>
 </div>
 
@@ -58,6 +64,7 @@
             aspect-ratio: 1;
             justify-content: space-evenly;
             border-radius: 2rem;
+            background-image: url("/images/bg-today-small.svg");
         }
 
         .place {

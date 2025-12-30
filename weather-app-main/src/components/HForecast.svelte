@@ -1,9 +1,41 @@
 <script>
     import Daydrop from "./Daydrop.svelte";
+    import { data } from "../shared";
+
+    let url = {
+        0: "/images/icon-sunny.webp",
+        1: "/images/icon-sunny.webp",
+        2: "/images/icon-partly-cloudy.webp",
+        3: "/images/icon-overcast.webp",
+        45: "/images/icon-fog.webp",
+        48: "/images/icon-fog.webp",
+        51: "/images/icon-drizzle.webp",
+        53: "/images/icon-drizzle.webp",
+        55: "/images/icon-drizzle.webp",
+        61: "/images/icon-rain.webp",
+        63: "/images/icon-rain.webp",
+        65: "/images/icon-rain.webp",
+        71: "/images/icon-snow.webp",
+        73: "/images/icon-snow.webp",
+        75: "/images/icon-snow.webp",
+        80: "/images/icon-rain.webp",
+        81: "/images/icon-rain.webp",
+        82: "/images/icon-rain.webp",
+        85: "/images/icon-snow.webp",
+        86: "/images/icon-snow.webp",
+        95: "/images/icon-storm.webp",
+        96: "/images/icon-storm.webp",
+        99: "/images/icon-storm.webp",
+    };
+
+    $: wcode = $data.daily.weather_code;
+
     const hours = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24,
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+        20, 21, 22, 23,
     ];
+
+    $: temp = $data.hourly.temperature_2m.slice(0, 24);
 </script>
 
 <div class="cont">
@@ -15,10 +47,13 @@
         {#each hours as hour}
             <div class="options">
                 <section>
-                    <img src="/images/icon-sunny.webp" alt="sunny" />
-                    <div class="time">{hour}</div>
+                    <img src={url[0]} alt={url[0]} />
+                    <div class="time">
+                        {hour > 12 ? hour - 12 : hour}
+                        {hour > 12 ? "PM" : "AM"}
+                    </div>
                 </section>
-                <div>20°</div>
+                <div>{temp[hour]}°</div>
             </div>
         {/each}
     </div>

@@ -1,3 +1,11 @@
+<script>
+    import { data } from "../shared";
+
+    $: humidity = $data.current.relative_humidity_2m;
+    $: app_temp = $data.current.apparent_temperature;
+    $: wind_speed = $data.current.wind_speed_10m;
+</script>
+
 <div class="stats">
     <div class="stat">
         <p class="header">Feels like</p>
