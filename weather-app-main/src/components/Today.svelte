@@ -2,16 +2,74 @@
     import { data } from "../shared";
     import { nameCountry } from "../shared";
 
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    let url = {
+        0: "/images/icon-sunny.webp",
+        1: "/images/icon-sunny.webp",
+        2: "/images/icon-partly-cloudy.webp",
+        3: "/images/icon-overcast.webp",
+        45: "/images/icon-fog.webp",
+        48: "/images/icon-fog.webp",
+        51: "/images/icon-drizzle.webp",
+        53: "/images/icon-drizzle.webp",
+        55: "/images/icon-drizzle.webp",
+        61: "/images/icon-rain.webp",
+        63: "/images/icon-rain.webp",
+        65: "/images/icon-rain.webp",
+        71: "/images/icon-snow.webp",
+        73: "/images/icon-snow.webp",
+        75: "/images/icon-snow.webp",
+        80: "/images/icon-rain.webp",
+        81: "/images/icon-rain.webp",
+        82: "/images/icon-rain.webp",
+        85: "/images/icon-snow.webp",
+        86: "/images/icon-snow.webp",
+        95: "/images/icon-storm.webp",
+        96: "/images/icon-storm.webp",
+        99: "/images/icon-storm.webp",
+    };
+
+    $: wcode = $data.daily.weather_code;
+
     $: temp = $data.current.temperature_2m;
+    const date = new Date();
 </script>
 
 <div class="today">
     <section class="left">
         <p class="place">{$nameCountry.name}, {$nameCountry.country}</p>
-        <p class="date">Tuesday, August 5 2025</p>
+        <p class="date">
+            {days[date.getDay()]}, {months[date.getMonth()]}
+            {date.getDate()}
+            {date.getFullYear()}
+        </p>
     </section>
     <section class="right">
-        <img src="/images/icon-sunny.webp" alt="weather-icon" />
+        <img src={url[wcode[0]]} alt={url[wcode[0]]} />
         <div class="temp">{temp}°</div>
     </section>
 </div>

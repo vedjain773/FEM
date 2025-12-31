@@ -1,6 +1,11 @@
 <script>
     import { data } from "../shared";
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    import Daydrop from "./Daydrop.svelte";
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    $: dateStr = $data.daily.time[0];
+    $: cDate = new Date(dateStr);
+    $: offset = 7 - cDate.getDay();
 
     let url = {
         0: "/images/icon-sunny.webp",
@@ -18,6 +23,7 @@
         71: "/images/icon-snow.webp",
         73: "/images/icon-snow.webp",
         75: "/images/icon-snow.webp",
+        77: "/images/icon-snow.webp",
         80: "/images/icon-rain.webp",
         81: "/images/icon-rain.webp",
         82: "/images/icon-rain.webp",
@@ -30,6 +36,7 @@
 
     $: wcode = $data.daily.weather_code;
 
+    console.log($data.daily.weather_code);
     $: temp_min = $data.daily.temperature_2m_min;
     $: temp_max = $data.daily.temperature_2m_max;
 </script>
@@ -39,8 +46,11 @@
     <div class="cont">
         {#each days as day, i}
             <div class="card">
-                <p class="day">{day}</p>
-                <img src={url[wcode[i]]} alt={url[wcode[i]]} />
+                <p class="day">{days[(i + offset) % 7]}</p>
+                <img
+                    src={url[wcode[(i + offset) % 7]]}
+                    alt={url[wcode[(i + offset) % 7]]}
+                />
                 <section>
                     <div class="max">{temp_max[i] || 0}°</div>
                     <div class="min">{temp_min[i] || 0}°</div>
