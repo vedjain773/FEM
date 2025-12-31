@@ -1,7 +1,10 @@
 <script>
     import { data } from "../shared";
+    import { nameCountry } from "../shared";
 
     let name = $state("Berlin");
+    let country = $state("Germany");
+
     let coords = {
         latitude: 0,
         longitude: 0,
@@ -38,6 +41,17 @@
             // console.log(result);
             coords.latitude = result.results[0].latitude;
             coords.longitude = result.results[0].longitude;
+
+            name = result.results[0].name;
+            country = result.results[0].country;
+
+            let obj = {
+                name: name,
+                country: country,
+            };
+
+            nameCountry.set(obj);
+
             console.log(coords.latitude, coords.longitude);
             getWeather();
         } catch (error) {

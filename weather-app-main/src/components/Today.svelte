@@ -1,12 +1,13 @@
 <script>
     import { data } from "../shared";
+    import { nameCountry } from "../shared";
 
     $: temp = $data.current.temperature_2m;
 </script>
 
 <div class="today">
     <section class="left">
-        <p class="place">Berlin, Germany</p>
+        <p class="place">{$nameCountry.name}, {$nameCountry.country}</p>
         <p class="date">Tuesday, August 5 2025</p>
     </section>
     <section class="right">

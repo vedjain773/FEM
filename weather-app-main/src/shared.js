@@ -238,3 +238,8 @@ export let data = writable({
     precipitation_probability_max: [3, 55, 68, 55, 38, 23, 23],
   },
 });
+
+export let nameCountry = writable({
+  name: "Berlin",
+  country: "Germany",
+});
