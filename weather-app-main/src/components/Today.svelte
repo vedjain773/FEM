@@ -56,16 +56,17 @@
     $: wcode = $data.daily.weather_code;
 
     $: temp = $data.current.temperature_2m;
-    const date = new Date();
+    $: dateStr = $data.daily.time[0];
+    $: cDate = new Date(dateStr);
 </script>
 
 <div class="today">
     <section class="left">
         <p class="place">{$nameCountry.name}, {$nameCountry.country}</p>
         <p class="date">
-            {days[date.getDay()]}, {months[date.getMonth()]}
-            {date.getDate()}
-            {date.getFullYear()}
+            {days[cDate.getDay()]}, {months[cDate.getMonth()]}
+            {cDate.getDate()}
+            {cDate.getFullYear()}
         </p>
     </section>
     <section class="right">

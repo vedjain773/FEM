@@ -1,27 +1,31 @@
 <script>
+    import { data } from "../shared";
+    import { dayOfTheWeek } from "../shared";
+
+    let dateStr = $derived($data.daily.time[0]);
+    let cDate = $derived(new Date(dateStr));
+    let cDay = $derived(cDate.getDay());
+
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+
     let isClicked = $state(false);
-    let activeDay = $state("Monday");
+    let activeDay = $state(days[cDay]);
 
     function toggle() {
         isClicked = !isClicked;
     }
 
     function change(num) {
-        if (num == 1) {
-            activeDay = "Monday";
-        } else if (num == 2) {
-            activeDay = "Tuesday";
-        } else if (num == 3) {
-            activeDay = "Wednesday";
-        } else if (num == 4) {
-            activeDay = "Thursday";
-        } else if (num == 5) {
-            activeDay = "Friday";
-        } else if (num == 6) {
-            activeDay = "Saturday";
-        } else if (num == 7) {
-            activeDay = "Sunday";
-        }
+        activeDay = days[num];
+        dayOfTheWeek.set(num % 7);
     }
 </script>
 
@@ -90,7 +94,7 @@
             <button
                 class="options"
                 class:active={activeDay == "Sunday"}
-                onclick={() => change(7)}
+                onclick={() => change(0)}
             >
                 <div>Sunday</div>
                 <img src="/images/icon-checkmark.svg" alt="selected" />

@@ -11,7 +11,7 @@
     };
 
     async function getWeather() {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&hourly=temperature_2m&current=temperature_2m,relative_humidity_2m,wind_speed_10m,apparent_temperature`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,wind_speed_10m,apparent_temperature`;
         try {
             const response = await fetch(url);
             console.log("Triggered");
@@ -22,7 +22,7 @@
             const result = await response.json();
             data.set(result);
 
-            console.log($data);
+            console.log(data);
         } catch (error) {
             console.error(error.message);
         }
@@ -52,7 +52,6 @@
 
             nameCountry.set(obj);
 
-            console.log(coords.latitude, coords.longitude);
             getWeather();
         } catch (error) {
             console.error(error.message);

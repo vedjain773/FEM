@@ -4,24 +4,25 @@
     $: humidity = $data.current.relative_humidity_2m;
     $: app_temp = $data.current.apparent_temperature;
     $: wind_speed = $data.current.wind_speed_10m;
+    $: precipitation = $data.daily.precipitation_probability_max[0];
 </script>
 
 <div class="stats">
     <div class="stat">
         <p class="header">Feels like</p>
-        <p class="data">18°</p>
+        <p class="data">{app_temp}°</p>
     </div>
     <div class="stat">
         <p class="header">Humidity</p>
-        <p class="data">46%</p>
+        <p class="data">{humidity}%</p>
     </div>
     <div class="stat">
         <p class="header">Wind</p>
-        <p class="data">14 km/h</p>
+        <p class="data">{Math.round(wind_speed)} km/h</p>
     </div>
     <div class="stat">
         <p class="header">Precipitation</p>
-        <p class="data">0 mm</p>
+        <p class="data">{precipitation} mm</p>
     </div>
 </div>
 

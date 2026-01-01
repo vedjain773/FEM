@@ -5,7 +5,7 @@
 
     $: dateStr = $data.daily.time[0];
     $: cDate = new Date(dateStr);
-    $: offset = 7 - cDate.getDay();
+    $: cDay = cDate.getDay();
 
     let url = {
         0: "/images/icon-sunny.webp",
@@ -36,7 +36,6 @@
 
     $: wcode = $data.daily.weather_code;
 
-    console.log($data.daily.weather_code);
     $: temp_min = $data.daily.temperature_2m_min;
     $: temp_max = $data.daily.temperature_2m_max;
 </script>
@@ -46,10 +45,10 @@
     <div class="cont">
         {#each days as day, i}
             <div class="card">
-                <p class="day">{days[(i + offset) % 7]}</p>
+                <p class="day">{days[(i + cDay) % 7]}</p>
                 <img
-                    src={url[wcode[(i + offset) % 7]]}
-                    alt={url[wcode[(i + offset) % 7]]}
+                    src={url[wcode[(i + cDay) % 7]]}
+                    alt={url[wcode[(i + cDay) % 7]]}
                 />
                 <section>
                     <div class="max">{temp_max[i] || 0}°</div>

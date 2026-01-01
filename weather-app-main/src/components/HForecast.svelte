@@ -1,6 +1,18 @@
 <script>
     import Daydrop from "./Daydrop.svelte";
     import { data } from "../shared";
+    import { dayOfTheWeek } from "../shared";
+
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    $: dateStr = $data.daily.time[0];
+    $: cDate = new Date(dateStr);
+    $: cDay = cDate.getDay();
+
+    $: weekInd =
+        $dayOfTheWeek - cDay > 0
+            ? $dayOfTheWeek - cDay
+            : $dayOfTheWeek - cDay + 7;
 
     let url = {
         0: "/images/icon-sunny.webp",
@@ -28,14 +40,14 @@
         99: "/images/icon-storm.webp",
     };
 
-    $: wcode = $data.daily.weather_code;
+    $: wcode = $data.hourly.weather_code.slice(weekInd * 7, weekInd * 7 + 24);
 
     const hours = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
         20, 21, 22, 23,
     ];
 
-    $: temp = $data.hourly.temperature_2m.slice(0, 24);
+    $: temp = $data.hourly.temperature_2m.slice(weekInd * 7, weekInd * 7 + 24);
 </script>
 
 <div class="cont">
@@ -47,10 +59,10 @@
         {#each hours as hour}
             <div class="options">
                 <section>
-                    <img src={url[0]} alt={url[0]} />
+                    <img src={url[wcode[hour]]} alt={url[wcode[hour]]} />
                     <div class="time">
                         {hour > 12 ? hour - 12 : hour}
-                        {hour > 12 ? "PM" : "AM"}
+                        {hour >= 12 ? "PM" : "AM"}
                     </div>
                 </section>
                 <div>{temp[hour]}°</div>
