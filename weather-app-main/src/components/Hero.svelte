@@ -1,9 +1,14 @@
 <script>
     import { data } from "../shared";
     import { nameCountry } from "../shared";
+    import { units } from "../shared";
 
     let name = $state("Berlin");
     let country = $state("Germany");
+
+    let temp_unit = $derived($units.temp ? "celsius" : "fahrenheit");
+    let prec_unit = $derived($units.prec ? "mm" : "inch");
+    let wind_unit = $derived($units.wind ? "kmh" : "mph");
 
     let coords = {
         latitude: 0,
@@ -11,7 +16,7 @@
     };
 
     async function getWeather() {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,wind_speed_10m,apparent_temperature`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&wind_speed_unit=${wind_unit}&temperature_unit=${temp_unit}&precipitation_unit=${prec_unit}&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,wind_speed_10m,apparent_temperature`;
         try {
             const response = await fetch(url);
             console.log("Triggered");

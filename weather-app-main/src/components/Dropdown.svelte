@@ -1,4 +1,6 @@
 <script>
+    import { units } from "../shared";
+
     let isClicked = $state(false);
     let unitConfig = $state({ temp: true, wind: true, prec: true });
     let isMetric = $derived(
@@ -17,12 +19,16 @@
         } else {
             unitConfig.prec = bl;
         }
+
+        units.set(unitConfig);
     }
 
     function switchSys(bl) {
         unitConfig.temp = bl;
         unitConfig.wind = bl;
         unitConfig.prec = bl;
+
+        units.set(unitConfig);
     }
 </script>
 

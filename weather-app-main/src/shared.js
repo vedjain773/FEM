@@ -257,3 +257,5 @@ export let nameCountry = writable({
 });
 
 export let dayOfTheWeek = writable(1);
+
+export let units = writable({ temp: true, wind: true, prec: true });

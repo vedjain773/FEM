@@ -1,5 +1,9 @@
 <script>
     import { data } from "../shared";
+    import { units } from "../shared";
+
+    $: wind_unit = $units.wind ? "km/h" : "mph";
+    $: prec_unit = $units.prec ? "mm" : "inch";
 
     $: humidity = $data.current.relative_humidity_2m;
     $: app_temp = $data.current.apparent_temperature;
@@ -18,11 +22,11 @@
     </div>
     <div class="stat">
         <p class="header">Wind</p>
-        <p class="data">{Math.round(wind_speed)} km/h</p>
+        <p class="data">{Math.round(wind_speed)} {wind_unit}</p>
     </div>
     <div class="stat">
         <p class="header">Precipitation</p>
-        <p class="data">{precipitation} mm</p>
+        <p class="data">{precipitation} {prec_unit}</p>
     </div>
 </div>
 
